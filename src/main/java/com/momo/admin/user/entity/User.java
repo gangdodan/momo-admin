@@ -1,6 +1,8 @@
 package com.momo.admin.user.entity;
 
 
+import com.momo.admin.common.domain.BaseTime;
+import com.momo.admin.common.exception.enums.ErrorCode;
 import com.momo.admin.settlement.entity.PointHistory;
 import com.momo.admin.user.enums.UserStateType;
 import com.momo.admin.user.exception.CanNotChangeUserStateException;
@@ -21,7 +23,7 @@ import static javax.persistence.GenerationType.IDENTITY;
 @EqualsAndHashCode(callSuper = false)       //hmm*
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
-public class User extends BaseTime{
+public class User extends BaseTime {
     @Id
     @Column(name = "user_id")
     @GeneratedValue(strategy = IDENTITY)

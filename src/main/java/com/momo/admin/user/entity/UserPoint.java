@@ -10,6 +10,8 @@ import javax.persistence.AccessType;
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
 
+import static com.momo.admin.common.exception.enums.ErrorCode.REQUEST_CONFLICT;
+
 @Embeddable
 @Access(AccessType.FIELD)
 @Builder(access = AccessLevel.PROTECTED)
