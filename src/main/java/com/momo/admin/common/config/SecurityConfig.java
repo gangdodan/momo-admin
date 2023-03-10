@@ -24,6 +24,8 @@ public class SecurityConfig {
                 .cors(Customizer.withDefaults())
                 .formLogin().disable()
                 .httpBasic().disable()
+//                .authorizeRequests()
+//                .antMatchers("/**").permitAll();
                 .authorizeRequests(authorize -> authorize.anyRequest().permitAll());
         return http.build();
     }
@@ -33,15 +35,15 @@ public class SecurityConfig {
         return PasswordEncoderFactories.createDelegatingPasswordEncoder();
     }
 
-    @Bean
-    CorsConfigurationSource configurationSource(){
-        CorsConfiguration configuration = new CorsConfiguration();
-        configuration.setAllowedOrigins(Arrays.asList("*"));
-        configuration.setAllowedMethods(Arrays.asList("GET","POST","PATCH","DELETE"));
-
-        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-        source.registerCorsConfiguration("/**", configuration);
-        return source;
-    }
+//    @Bean
+//    CorsConfigurationSource configurationSource(){
+//        CorsConfiguration configuration = new CorsConfiguration();
+//        configuration.setAllowedOrigins(Arrays.asList("*"));
+//        configuration.setAllowedMethods(Arrays.asList("GET","POST","PATCH","DELETE"));
+//
+//        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+//        source.registerCorsConfiguration("/**", configuration);
+//        return source;
+//    }
 
 }
