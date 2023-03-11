@@ -28,6 +28,7 @@ public class Payment extends BaseTime {
     @GeneratedValue(strategy = IDENTITY)
     private Long id;
 
+    @Enumerated(EnumType.STRING)
     private PayType payType;
 
     private Long amount;

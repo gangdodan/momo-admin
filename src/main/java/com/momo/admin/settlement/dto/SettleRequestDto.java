@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class SettlementHistoryRequestDto {
+public class SettleRequestDto {
     private Long userId;
     private DateType dateType;
     private Long meetingId;

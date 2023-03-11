@@ -1,6 +1,5 @@
 package com.momo.admin.settlement.dto;
 
-import com.momo.admin.payment.domain.enums.PayType;
 import lombok.*;
 
 import java.time.LocalDate;
@@ -9,9 +8,9 @@ import java.time.LocalDate;
 @Builder
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 @NoArgsConstructor
-public class SettlementHistoryResponseDto {
+public class SettleHistoryResponseDto {
     private LocalDate settleDate;
-    private PayType paytype;
+    private String paytype;
     private Long amount;
     private SettleAccount settleAccount;
     private Long reservationId;
@@ -27,10 +26,10 @@ public class SettlementHistoryResponseDto {
         private String account;
         private String bank;
     }
-    public static SettlementHistoryResponseDto of(SettlementHistoryDto dto){
-        return SettlementHistoryResponseDto.builder()
+    public static SettleHistoryResponseDto of(SettleHistoryDto dto){
+        return SettleHistoryResponseDto.builder()
                 .settleDate(dto.getSettleDate().toLocalDate())
-                .paytype(dto.getPaytype())
+                .paytype(dto.getPaytype().getValue())
                 .amount(dto.getAmount())
                 .settleAccount(new SettleAccount())
                 .reservationId(dto.getReservationId())
